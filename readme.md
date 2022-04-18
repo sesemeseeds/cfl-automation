@@ -2,10 +2,6 @@ photo app with damian
 
 WRITE-UP = https://docs.google.com/document/d/1o-mFSY37BzCc43Oj5XSsNj8hyvl4F425Qr1Zj6f77JE/edit
 
-test gmail: damianphoto1test@gmail.com                  pass: ph0t0t3s1
-
-
-
 Files and what they do:
     1) credentials.json - Auth 2.0 credentials required from the Google Cloud Developer Console API, can only be generated in the console
     2) customer-info.xlsx - excel file containing all the order information (will be manually changed by the owner)
