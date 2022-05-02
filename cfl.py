@@ -26,7 +26,7 @@ SCOPES = ['https://mail.google.com/', 'https://www.googleapis.com/auth/drive']
 SPREADSHEET_PATH = "customer-info.xlsx"
 
 #owner email
-MY_EMAIL = "damianphoto1test@gmail.com"
+MY_EMAIL = "cincinnatifilmlab@gmail.com"    
 
 """
 MAKE SURE EXCEL FILE IS CLOSED AND SAVED
@@ -38,7 +38,8 @@ def main():
 
     workbook = openpyxl.load_workbook(SPREADSHEET_PATH)         # opens excel file
     print("Opening workbook... SUCCESS\n")
-    ws = workbook.active                                  # assigns workbook to variable named ws
+    ws0 = workbook.active                                  # assigns workbook to variable named ws
+    ws = ws0['Order']
 
     progressCol = ws['D']                                       # looks at column D (progress column) ['In progress', 'Ready', 'Done']
     
