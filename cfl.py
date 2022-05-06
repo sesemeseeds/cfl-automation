@@ -30,7 +30,6 @@ MY_EMAIL = "cincinnatifilmlab@gmail.com"
 
 """
 MAKE SURE EXCEL FILE IS CLOSED AND SAVED
-
 """
 
 def main():
@@ -42,6 +41,7 @@ def main():
     ws = ws0['Order']
 
     progressCol = ws['D']                                       # looks at column D (progress column) ['In progress', 'Ready', 'Done']
+    orderCol = ws['A']
     
     for cell in progressCol:                                    # for each cell...
         if (cell.value == "Ready"):                             # finds which cells are 'Ready'
@@ -68,7 +68,11 @@ def main():
                 body = "Hi " + name + "! Your photos have been processed and are available at the link below. Thank you! \n\n"+ share_link + "\n\nTo pick up your negatives, schedule a time here: https://app.squarespacescheduling.com/schedule.php?owner=23693339."
                 send_message(gmail_service, email, subject, body)
 
-                ws['D' + str(cellRow)] = "Done"
+                for cell in orderCol:
+                    if(cell.value == orderNum):
+                        r = cell.row
+                        ws['D' + str(r)] = "Done"
+
                 workbook.save(SPREADSHEET_PATH)
 
 
